@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>彭蔚锋 Eddie | 资深资产管理 × AI 资管信息化</title>
+<meta name="description" content="彭蔚锋 Eddie，12 年头部房企资深资产管理经验，现任象屿地产资产管理部负责人。以 AI 重构资管信息化全流程，跨界复合型人才。">
+<style>
+:root{
+  --forest:#0C352A;
+  --forest-2:#0F4436;
+  --lime:#C7EE6B;
+  --lime-d:#B3E24E;
+  --lime-soft:#E9F6C6;
+  --sans:"Source Han Sans SC","Source Han Sans CN","Noto Sans SC","Noto Sans CJK SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  --serif:"Source Han Serif SC","Noto Serif SC","Songti SC","STSong",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{background:var(--forest);color:#fff;font-family:var(--sans);font-size:16px;line-height:1.7;letter-spacing:.01em;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img{display:block;max-width:100%;}
+button{font-family:inherit;}
+.skip{position:absolute;left:-9999px;top:0;background:var(--lime);color:var(--forest);padding:8px 14px;z-index:99;}
+.skip:focus{left:12px;top:12px;}
+
+/* ---------- stage: 一整块底板 ---------- */
+.stage{position:relative;max-width:1560px;margin:0 auto;padding:0;
+  display:grid;grid-template-columns:44% minmax(0,1fr);
+  height:100vh;min-height:680px;background:var(--forest);overflow:hidden;}
+
+/* ---------- 极光炫光（沉在玻璃卡下面） ---------- */
+.aurora{position:absolute;left:-12%;top:-10%;width:124%;height:126%;z-index:0;pointer-events:none;filter:blur(84px);opacity:.75;}
+.aurora i{position:absolute;display:block;border-radius:50%;mix-blend-mode:screen;}
+.aurora i:nth-child(1){left:4%;top:60%;width:56%;height:50%;background:radial-gradient(circle at 50% 50%,rgba(199,238,107,.62),rgba(199,238,107,0) 68%);animation:auroraA 27s ease-in-out infinite alternate;}
+.aurora i:nth-child(2){left:28%;top:72%;width:64%;height:56%;background:radial-gradient(circle at 50% 50%,rgba(93,202,165,.58),rgba(93,202,165,0) 70%);animation:auroraB 33s ease-in-out infinite alternate;}
+.aurora i:nth-child(3){left:60%;top:54%;width:50%;height:46%;background:radial-gradient(circle at 50% 50%,rgba(132,216,255,.38),rgba(132,216,255,0) 70%);animation:auroraA 39s ease-in-out infinite alternate;}
+.aurora i:nth-child(4){left:10%;top:82%;width:42%;height:38%;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.28),rgba(255,255,255,0) 70%);animation:auroraB 45s ease-in-out infinite alternate;}
+@keyframes auroraA{from{transform:translate3d(-3%,2%,0) scale(1)}to{transform:translate3d(4%,-3%,0) scale(1.12)}}
+@keyframes auroraB{from{transform:translate3d(3%,-2%,0) scale(1.08)}to{transform:translate3d(-4%,3%,0) scale(.96)}}
+
+/* ---------- 苹果液态玻璃材质 ---------- */
+.glass{background:rgba(255,255,255,.5);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(255,255,255,.62);border-radius:20px;
+  box-shadow:0 10px 34px rgba(4,22,16,.24),inset 0 1px 0 rgba(255,255,255,.85);}
+
+/* 氛围层：场景虚化，向四周渐隐融入墨绿底板（在标题层之下） */
+.ambient{position:absolute;left:0;top:0;width:44%;height:100%;z-index:0;pointer-events:none;
+  background:url("assets/hero-ambient.jpg") center 34%/cover no-repeat;opacity:.92;
+  -webkit-mask-image:radial-gradient(120% 84% at 48% 40%,#000 22%,rgba(0,0,0,.42) 56%,transparent 100%);
+  mask-image:radial-gradient(120% 84% at 48% 40%,#000 22%,rgba(0,0,0,.42) 56%,transparent 100%);}
+/* 底部压暗：承载图上文字，同样在标题层之下，不压暗主标题 */
+.veil{position:absolute;left:0;top:0;width:44%;height:100%;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0,rgba(12,53,42,.10) 32%,rgba(12,53,42,.60) 66%,rgba(12,53,42,.90) 86%,var(--forest) 100%);}
+
+/* 人物：透明抠图层，压在标题之上形成立体遮挡；边缘柔和投影融入底板 */
+.photo{position:relative;z-index:2;pointer-events:none;}
+.photo img{position:absolute;left:52%;bottom:-2%;transform:translateX(-50%);height:99%;width:auto;max-width:none;
+  filter:drop-shadow(0 18px 42px rgba(5,20,15,.5));}
+.onpic{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 40px 30px 34px;pointer-events:auto;}
+.onpic .nm{font-family:var(--serif);font-size:clamp(28px,2.7vw,38px);font-weight:600;line-height:1.18;letter-spacing:.04em;}
+.onpic .en{font-size:10.5px;letter-spacing:.24em;color:var(--lime);margin-top:7px;}
+.onpic .rl{font-size:14px;color:rgba(255,255,255,.9);margin-top:11px;line-height:1.6;}
+.onpic .rl i{font-style:normal;color:var(--lime);}
+.nums{display:flex;gap:26px;margin:16px 0 14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16);}
+.nums div b{display:block;font-size:24px;font-weight:600;color:var(--lime);line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+.nums div b small{font-size:12px;margin-left:2px;}
+.nums div span{font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.03em;}
+.caps{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+.caps button{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:none;border:none;border-left:2px solid var(--lime);padding:5px 0 5px 11px;cursor:pointer;color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.02em;transition:padding-left .22s,background .22s;}
+.caps button:hover{padding-left:15px;background:rgba(255,255,255,.07);}
+.caps button em{font-style:normal;font-size:12px;color:var(--lime);margin-left:auto;opacity:.7;}
+.contact{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;}
+.contact a{color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;transition:color .2s,border-color .2s;}
+.contact a:hover{color:var(--lime);border-color:var(--lime);}
+.contact a.pdf{color:var(--lime);border-color:rgba(199,238,107,.4);}
+
+/* 主标题：z 序低于人物层，文字从人物身后穿过、被人物身体遮住，形成前后立体关系 */
+.headline{position:absolute;top:0;left:26%;right:0;z-index:1;padding:44px 34px 0 0;pointer-events:none;}
+.headline h1{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.15vw,32px);line-height:1.46;letter-spacing:.025em;text-shadow:0 2px 20px rgba(9,32,25,.45);}
+.headline h1 em{font-style:normal;color:var(--lime);}
+.headline .sub{font-size:13.5px;color:rgba(255,255,255,.72);margin-top:12px;letter-spacing:.03em;line-height:1.7;max-width:640px;}
+.headline .tags{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap;}
+.headline .tags i{font-style:normal;font-size:11.5px;color:var(--lime);border:1px solid rgba(199,238,107,.35);padding:4px 11px;letter-spacing:.03em;}
+
+/* 右侧内容 */
+.content{position:relative;z-index:2;padding:212px 34px 24px 30px;display:flex;flex-direction:column;gap:16px;min-height:0;}
+.sec-hd{display:flex;align-items:baseline;gap:10px;}
+.sec-hd .no{font-size:11px;letter-spacing:.18em;color:var(--lime);font-weight:600;}
+.sec-hd h2{font-family:var(--serif);font-size:16px;font-weight:600;letter-spacing:.03em;}
+.sec-hd p{font-size:12px;color:rgba(255,255,255,.45);margin-left:auto;}
+.sec-hd button{font-size:12px;font-weight:600;color:var(--forest);background:rgba(255,255,255,.5);padding:5px 14px;cursor:pointer;margin-left:auto;border-radius:999px;
+  -webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);
+  border:1px solid rgba(255,255,255,.62);box-shadow:0 6px 18px rgba(4,22,16,.2),inset 0 1px 0 rgba(255,255,255,.85);
+  transition:background .2s,border-color .2s,transform .2s;}
+.sec-hd button:hover{background:rgba(255,255,255,.68);border-color:rgba(255,255,255,.9);transform:translateY(-1px);}
+
+.exp-grid{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:12px;}
+.ecard{text-align:left;padding:14px 15px;cursor:pointer;color:var(--forest);display:flex;flex-direction:column;transition:background .24s,border-color .24s,transform .24s,box-shadow .24s;
+  background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(255,255,255,.62);border-radius:20px;box-shadow:0 10px 30px rgba(4,22,16,.22),inset 0 1px 0 rgba(255,255,255,.85);}
+.ecard:hover{background:rgba(255,255,255,.62);border-color:rgba(255,255,255,.86);transform:translateY(-3px);box-shadow:0 16px 40px rgba(4,22,16,.3),inset 0 1px 0 rgba(255,255,255,.95);}
+.ecard .yr{font-size:11px;color:rgba(12,53,42,.55);letter-spacing:.04em;font-variant-numeric:tabular-nums;}
+.ecard .co{font-size:15.5px;font-weight:600;line-height:1.35;margin:5px 0 3px;letter-spacing:.01em;}
+.ecard .rl{font-size:12px;color:#0A6B45;font-weight:600;}
+.ecard .pt{font-size:12px;color:rgba(12,53,42,.74);line-height:1.7;margin-top:9px;display:flex;gap:7px;}
+.ecard .pt::before{content:"";flex:0 0 5px;height:1.5px;background:#0A6B45;margin-top:9px;opacity:.8;}
+.ecard .go{margin-top:auto;padding-top:9px;font-size:11.5px;font-weight:600;color:#0A6B45;display:flex;justify-content:space-between;align-items:center;}
+.ecard .go em{font-style:normal;transition:transform .22s;}
+.ecard:hover .go em{transform:translateX(3px);}
+
+.vibe-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.vcard{text-align:left;padding:13px 14px;cursor:pointer;color:var(--forest);transition:background .24s,border-color .24s,transform .24s,box-shadow .24s;
+  background:rgba(255,255,255,.5);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(255,255,255,.62);border-radius:20px;box-shadow:0 10px 30px rgba(4,22,16,.22),inset 0 1px 0 rgba(255,255,255,.85);}
+.vcard:hover{background:rgba(255,255,255,.62);border-color:rgba(255,255,255,.86);transform:translateY(-3px);box-shadow:0 16px 40px rgba(4,22,16,.3),inset 0 1px 0 rgba(255,255,255,.95);}
+.vcard .vt{font-size:10.5px;letter-spacing:.14em;color:#0A6B45;font-weight:600;}
+.vcard h3{font-size:13.5px;font-weight:600;line-height:1.45;margin:5px 0 4px;}
+.vcard p{font-size:11.5px;color:rgba(12,53,42,.72);line-height:1.6;}
+.vcard.add{background:rgba(255,255,255,.24);-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);
+  border:1px dashed rgba(12,53,42,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:rgba(12,53,42,.68);box-shadow:none;}
+.vcard.add:hover{color:var(--forest);border-color:rgba(12,53,42,.7);background:rgba(255,255,255,.36);}
+.vcard.add .plus{font-size:18px;line-height:1;}
+.vcard.add span{font-size:12px;}
+
+/* ---------- modal ---------- */
+.mask{position:fixed;inset:0;background:rgba(6,22,17,.62);opacity:0;pointer-events:none;transition:opacity .28s;z-index:60;}
+.mask.on{opacity:1;pointer-events:auto;}
+.modal{position:fixed;z-index:70;left:50%;top:50%;transform:translate(-50%,-46%) scale(.985);width:min(860px,calc(100vw - 32px));max-height:calc(100vh - 64px);background:#fff;color:var(--ink,#132019);display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .28s,transform .28s;box-shadow:0 30px 80px rgba(0,0,0,.3);}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+.mo-top{flex:0 0 auto;background:var(--forest);color:#fff;padding:14px 22px;display:flex;align-items:center;gap:14px;}
+.mo-top .k{font-size:10.5px;letter-spacing:.2em;color:var(--lime);}
+.mo-top h3{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.3;margin-top:2px;}
+.mo-close{margin-left:auto;flex:0 0 32px;width:32px;height:32px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer;font-size:14px;line-height:1;}
+.mo-close:hover{border-color:var(--lime);color:var(--lime);}
+.mo-bd{padding:24px 26px 30px;overflow-y:auto;color:#132019;-webkit-overflow-scrolling:touch;}
+.blk+.blk{margin-top:26px;padding-top:22px;border-top:1px solid var(--line,#E1E9E3);}
+.blk-h{font-size:11.5px;letter-spacing:.18em;color:#7B8A81;margin-bottom:12px;}
+.blk .yr{font-size:12.5px;color:#7B8A81;letter-spacing:.04em;font-variant-numeric:tabular-nums;}
+.blk h4{font-family:var(--serif);font-size:22px;font-weight:600;margin:6px 0 4px;line-height:1.3;color:#132019;}
+.blk .role{font-size:14.5px;color:var(--forest);font-weight:600;}
+.blk .meta{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 16px;}
+.blk .meta i{font-style:normal;font-size:12px;color:var(--forest);background:var(--lime-soft);padding:4px 10px;}
+.blk ul li{font-size:14.5px;color:#45564D;line-height:1.9;padding-left:18px;position:relative;margin-bottom:10px;}
+.blk ul li::before{content:"";position:absolute;left:0;top:12px;width:9px;height:1.5px;background:var(--forest);}
+.blk .note{background:#F2F7F3;border:1px solid #E1E9E3;padding:16px 18px;margin-top:16px;}
+.blk .note p{font-size:14px;color:#45564D;line-height:1.9;}
+.ckli{display:flex;gap:10px;font-size:14.5px;color:#45564D;line-height:1.85;margin-bottom:9px;}
+.ckli i{flex:0 0 17px;width:17px;height:17px;border:1.5px solid var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--forest);font-style:normal;margin-top:4px;}
+.mo-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;padding-top:20px;border-top:1px solid #E1E9E3;}
+.mo-nav button{border:1px solid #E1E9E3;background:none;padding:9px 15px;font-size:13px;color:#45564D;cursor:pointer;}
+.mo-nav button:hover:not(:disabled){border-color:var(--forest);color:var(--forest);}
+.mo-nav button:disabled{opacity:.4;cursor:default;}
+.mo-edu{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #E1E9E3;}
+.mo-edu b{font-size:15.5px;}
+.mo-edu span{display:block;font-size:13.5px;color:#7B8A81;margin-top:2px;}
+.mo-edu i{font-style:normal;font-size:13px;color:var(--forest);font-variant-numeric:tabular-nums;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;}
+.chips i{font-style:normal;font-size:13px;color:#45564D;border:1px solid #E1E9E3;padding:6px 13px;}
+.chips i.g{border-color:var(--forest);color:var(--forest);background:var(--lime-soft);}
+
+/* ---------- motion ---------- */
+@keyframes riseIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.anim{opacity:0;animation:riseIn .55s cubic-bezier(.2,.6,.2,1) forwards}
+.photo.anim{animation:fadeIn .8s ease forwards}
+@media (prefers-reduced-motion:reduce){
+  .anim{animation:none;opacity:1}
+  *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1240px){
+  .stage{grid-template-columns:42% minmax(0,1fr);}
+  .content{padding-top:210px;}
+}
+@media (max-width:1080px){
+  .stage{grid-template-columns:1fr;grid-template-rows:none;height:auto;min-height:0;padding-bottom:26px;}
+  .ambient,.veil{width:100%;height:70vh;}
+  .aurora{width:120%;height:76vh;left:-10%;top:-4%;}
+  .ambient{-webkit-mask-image:radial-gradient(96% 72% at 50% 40%,#000 28%,rgba(0,0,0,.4) 62%,transparent 100%);mask-image:radial-gradient(96% 72% at 50% 40%,#000 28%,rgba(0,0,0,.4) 62%,transparent 100%);}
+  .veil{background:linear-gradient(180deg,transparent 0,rgba(12,53,42,.45) 74%,var(--forest) 100%);}
+  .photo{min-height:70vh;}
+  .photo img{left:50%;height:100%;bottom:0;transform:translateX(-50%);}
+  .headline{position:relative;left:auto;right:auto;padding:22px 26px 0;}
+  .content{padding:26px;}
+  .exp-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:860px){
+  .onpic{padding:0 22px 24px;}
+  .headline{padding:18px 22px 0;}
+  .content{padding:20px 22px 26px;}
+  .exp-grid{grid-template-columns:1fr;}
+  .vibe-grid{grid-template-columns:1fr;}
+  .nums{gap:18px;}
+  .modal{width:calc(100vw - 20px);max-height:calc(100vh - 40px);}
+  .mo-bd{padding:20px 18px 26px;}
+  .mo-top{padding:12px 16px;}
+}
+
+/* ---------- print ---------- */
+.print-only{display:none;}
+@media print{
+  .stage,.mask,.modal{display:none !important;}
+  body{background:#fff;color:#111;}
+  .print-only{display:block;padding:0 8mm;}
+  .print-only h1{font-family:var(--serif);font-size:22px;margin:0 0 4px;}
+  .print-only .p-sub{font-size:12px;color:#555;margin-bottom:14px;}
+  .print-only h2{font-family:var(--serif);font-size:16px;margin:18px 0 8px;padding-bottom:5px;border-bottom:1px solid #ccc;}
+  .print-only h3{font-size:14px;margin:12px 0 4px;}
+  .print-only .p-yr{font-size:11.5px;color:#666;}
+  .print-only .p-role{font-size:12.5px;font-weight:600;margin-bottom:5px;}
+  .print-only ul li{font-size:12px;line-height:1.7;margin-bottom:4px;padding-left:14px;position:relative;}
+  .print-only ul li::before{content:"–";position:absolute;left:0;}
+  .print-only .p-item{margin-bottom:6px;font-size:12px;}
+  .print-only .p-item b{font-weight:600;}
+  .print-only .p-foot{margin-top:16px;font-size:10.5px;color:#888;border-top:1px solid #ddd;padding-top:8px;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<main class="stage" id="main">
+
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+
+  <!-- 人物：透明层，压在标题之上 -->
+  <div class="photo">
+    <img src="assets/hero-person.webp" alt="彭蔚锋职业形象照" width="826" height="1400">
+    <div class="onpic">
+      <div class="nm">彭蔚锋</div>
+      <div class="en">EDDIE PENG</div>
+      <div class="rl">象屿地产 · <i>资产管理部负责人</i></div>
+      <div class="nums">
+        <div><b><span class="cu" data-to="200">200</span><small>亿</small></b><span>现管规模</span></div>
+        <div><b><span class="cu" data-to="600">600</span><small>亿</small></b><span>曾统筹</span></div>
+        <div><b><span class="cu" data-to="12">12</span><small>年</small></b><span>资管年限</span></div>
+      </div>
+      <div class="caps" id="capList"></div>
+      <div class="contact">
+        <a href="mailto:issic_520@163.com">issic_520@163.com</a>
+        <a href="tel:13370011105">133 7001 1105</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="pdf">下载完整简历 PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主标题：压在图上 -->
+  <div class="headline">
+    <h1>十二年资深资产管理，<br>用 <em>AI</em> 重做一遍 ——<br>打造资管信息化<em>全流程管理</em>的跨界复合人才</h1>
+    <p class="sub">华润置地 · 中粮大悦城 · 万达集团 · 万科 · 象屿地产｜求职方向：资产管理 / 投后管理 / 资管数字化</p>
+    <div class="tags">
+      <i>ENTJ · 体系搭建者</i><i>腾讯 WorkBuddy 首批 NOVA 大使</i><i>效率智能体 OPC 从业认证</i>
+    </div>
+  </div>
+
+  <!-- 右侧：经历 + vibe coding -->
+  <div class="content">
+    <div>
+      <div class="sec-hd">
+        <span class="no">01</span><h2>职业经历</h2>
+        <button data-all="exp">全部展开 →</button>
+      </div>
+      <div class="exp-grid" id="expList" style="margin-top:12px;"></div>
+    </div>
+    <div>
+      <div class="sec-hd">
+        <span class="no">02</span><h2>Vibe Coding 案例库</h2>
+        <button data-all="vibe">全部展开 →</button>
+      </div>
+      <div class="vibe-grid" id="vibeList" style="margin-top:12px;"></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="mask" id="mask"></div>
+<section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="moTitle" aria-hidden="true">
+  <div class="mo-top">
+    <div>
+      <div class="k" id="moKicker">MODULE</div>
+      <h3 id="moTitle">标题</h3>
+    </div>
+    <button class="mo-close" id="moClose" aria-label="关闭">✕</button>
+  </div>
+  <div class="mo-bd" id="moBody"></div>
+</section>
+
+<div class="print-only" id="printAll"></div>
+
+<script>
+(function(){
+/* ================= 数据 ================= */
+var EXP=[
+ {yr:"2024.06 — 至今",co:"象屿地产",role:"资产管理部负责人",
+  meta:["资产规模约 200 亿","商业 / 办公 / 长租 / 康养","集团业务统筹"],
+  brief:"牵头公司级资管体系 + 自主搭建 AI 经营数据驾驶舱",
+  pts:["负责集团整体资产管理和业务统筹，牵头搭建公司级资产管理运营体系，完善「投—融—管—退」全链路制度标准，推动资产管理从经验驱动向标准化、精细化转型。",
+       "统筹在营及筹开项目全生命周期管理，主导筹开项目落地阶段关键节点：项目定位、年度经营预算编制、KPI 考核跟踪及节点强排；通过动态经营分析确保项目收益达标与筹开效率。",
+       "负责重点项目投后全案管控：股权交割落地、接管计划铺排、合规信息披露及履约风险预警，确保合作方权益与品牌输出安全。",
+       "主导公司经营信息化建设，运用 AI 工具自主搭建经营数据可视化驾驶舱，打通业务、财务及会员等多源数据壁垒，实现数据自动抽取与智能诊断，为管理层提供实时决策支撑。",
+       "担任储备项目总带教，通过实战陪跑与 SOP 沉淀，负责项目负责人梯队孵化与能力复制。"],
+  proj:"① 厦门海上世界滨海微度假商业项目　② 厦门禾祥鑫天地城市微公园式商业项目　③ 厦门「屿见闽南」时光幻境文旅项目"},
+
+ {yr:"2021.08 — 2024.06",co:"万科地产 上海区域",role:"资产管理与配置总监",
+  meta:["12 个城市公司","80 余个自持商办项目","规模约 600 亿"],
+  brief:"12 城 80+ 项目、约 600 亿规模的全流程资产管理",
+  pts:["全流程资产管理：项目投资研判与出清决策；评估产标定位与租赁策略；制定全年经营预算及考核跟踪；筹开项目计划运营管控。",
+       "行业研究：商办市场研究、客户研究、行业项目研究，为商用业务发展提供数据支持；输出产品优化与趋势预判，为项目定位、租赁策略、推广方案、股权退出提供决策依据。",
+       "资源链接：统筹区域内外部资源，办公及商业租户资源整理拉通；重要外部合作方资源收集、整理、链接及落地推进。",
+       "平台运营：负责商置公司上海、杭州商业项目平台运营，牵头年度消费者满意度、租户满意度调研及平台巡检，制定次年经营整改方案。",
+       "负责上海嘉定理想之地「春熙集」筹开，成功助力项目开业并完成后期媒体宣发。"],
+  proj:"① 嘉定理想之地 · 春熙集　② 上生新所（上海地标城市更新项目）　③ 龙华会（庙市共生的在地文化商业）　④ 徐汇万科广场（都心玩乐聚落）"},
+
+ {yr:"2019.04 — 2021.07",co:"创业经历",role:"品牌创始人 · 实体门店",
+  meta:["静安大悦城","三年创业"],
+  brief:"独立经营全链条，建立单店盈利模型的真实体感",
+  pts:["独立负责公司选址、市场营销、品牌宣发、财务等全链条经营工作。",
+       "从甲方视角切换到经营者视角，建立对成本、现金流与单店盈利模型的真实体感。"],
+  proj:""},
+
+ {yr:"2016.04 — 2018.11",co:"万达集团 资产管理中心",role:"资产管理资深经理",
+  meta:["轻资产资产包约 100 亿","近 60 余个项目研策"],
+  brief:"近 60 个项目研策 + 100 亿资产包投后管控",
+  pts:["投资调研：负责万达广场整体的选址调研，以商业可行性角度撰写立项调研报告，为项目获取提供决策依据。",
+       "投资测算：负责拟发展项目投资回报率测算，跟踪并优化输入条件；负责已开业项目投资回报率核定，提高可研测算精度。",
+       "运营管控：编制筹备期及运营期租决文件，制定三年经营指标；成熟期年度预算编制及审核；审核大面积招商调整方案，确保租金增长率达标；定期完成经营调研报告向集团汇报。",
+       "资产包投后管理：配合前期股权交割，按工程进度向投资人提交资金需求计划并完成投资款结算；按季度进行收益与经营信息披露，确保分成无误；监控项目公司财务工作，预警财务风险。",
+       "专项研究：参与 2016/2017 年度资产管理报告（盘点 200 余家广场经营收益）、资产证券化研究、文旅项目后评价研究、大数据选址应用研究、城市分级研究。"],
+  proj:""},
+
+ {yr:"2015.05 — 2016.04",co:"中粮大悦城地产",role:"招商运营经理",
+  meta:["祥云小镇二期筹开","开业率 90%"],
+  brief:"创新业态招商，二期如期开业、开业率 90%",
+  pts:["品牌招商：负责祥云小镇二期筹开的餐饮、家居、创新业态品牌招商，项目于 2016 年 5 月正式开业。",
+       "租务协调：配合运营部安排租户进场、复尺、出图等 TC 前期工作。",
+       "推广配合：负责开业前招商成果发布会的策划组织，配合二期开业活动。",
+       "完成二期创新业态全部招商，实现开业率 90%；项目定位都市微度假型街区商业，引入波音艺术综合馆、风洞体验等业态。"],
+  proj:"祥云小镇二期（都市微度假型街区商业）"},
+
+ {yr:"2012.06 — 2015.05",co:"华润置地 商业地产事业部",role:"管培生 · 招商运营岗",
+  meta:["参与 10 余个万象城投资选址","标准化体系建设"],
+  brief:"总部战略招商 + 10 余个万象城投资选址",
+  pts:["总部招商：负责商业总部战略品牌招商及客户关系维护，重点对接影院、儿童游乐、大餐等业态在各万象城的落地，完成招商策略计划及租金测算。",
+       "投资及商业规划：负责商业总部投资选址、项目盘点（参与 10 余个万象城投资选址），配合各项目规划设计。",
+       "商业研究：参与万象汇产品线研究、百货改造等商业相关研究。",
+       "标准化体系：负责华润所有项目标准租赁文件的编制及商业制度体系搭建，建立商业管理 SOP 思维体系。",
+       "完成多个万象城的影院签约；参与万象汇产品线研究；参与总部租赁文件标准化模板编制。"],
+  proj:"万象城 / 万象汇体系"}
+];
+
+var CAP=[
+ {t:"投前研判与投资测算",d:"选址调研 · 立项报告 · 回报率核定",
+  pts:["以商业可行性视角撰写立项调研报告，为项目获取提供决策依据","拟发展项目投资回报率测算并跟踪优化输入条件；已开业项目回报率核定，提高可研精度","参与 10 余个万象城投资选址、近 60 余个万达广场项目研策"],
+  rel:"对应经历：华润置地 · 万达集团"},
+ {t:"筹开与全周期运营",d:"定位 · 节点强排 · 租决 · 预算考核",
+  pts:["主导筹开项目关键节点：项目定位、年度经营预算编制、KPI 考核跟踪及节点强排","编制筹备期及运营期租决文件，制定三年经营指标","审核大面积招商调整方案，确保租金增长率达标"],
+  rel:"对应经历：象屿地产 · 万科上海区域 · 中粮大悦城"},
+ {t:"投后管理与风险控制",d:"股权交割 · 接管铺排 · 披露 · 预警",
+  pts:["重点项目投后全案管控：股权交割落地、接管计划铺排、合规信息披露及履约风险预警","按工程进度提交资金需求计划并完成投资款结算；按季度进行收益与经营信息披露","监控项目公司财务工作、预警财务风险，配合投资人资金监管"],
+  rel:"对应经历：象屿地产 · 万达集团"},
+ {t:"AI 信息化与体系建设",d:"数据驾驶舱 · 多源打通 · 制度与梯队",
+  pts:["运用 AI 工具自主搭建经营数据可视化驾驶舱，打通业务、财务及会员多源数据壁垒","实现数据自动抽取与智能诊断，为管理层提供实时决策支撑","牵头公司级资管运营体系与制度标准；担任储备项目总带教，孵化项目负责人梯队"],
+  rel:"对应经历：象屿地产"}
+];
+
+var VIBE=[
+ {t:"经营数据可视化驾驶舱",tag:"AI · 数据打通",d:"打通业务、财务、会员多源数据，自动抽取与智能诊断",status:"已上线自用",
+  detail:["背景：集团经营数据分散在业务、财务、会员多个系统，月度经营分析依赖人工取数汇总。",
+          "做法：用 AI 工具自主搭建可视化驾驶舱，把多源数据打通，做到数据自动抽取 + 异常智能诊断。",
+          "结果：管理层可实时查看经营全貌，不再等人工报表；为预算跟踪与 KPI 考核提供统一口径。",
+          "技术：自然语言描述需求 → AI 生成代码 → 本地迭代，全程无 IT 排期介入。"]},
+ {t:"一铺一价收入测算工具",tag:"AI · 测算模型",d:"按铺位维度做收入测算，支撑租金决策与招商谈判",status:"已上线自用",
+  detail:["背景：商业项目定价需要按铺位逐户测算，表格版本反复改、易出错。",
+          "做法：做成轻量 Web 工具，输入铺位参数即可输出测算结果与对比方案。",
+          "结果：测算口径统一，招商与资管共用一套模型，谈判效率提升。"]},
+ {t:"筹开项目节点跟踪系统",tag:"AI · 流程管控",d:"里程碑 / 四级节点管控，节点自带审批 URL 便于流程对接",status:"已上线自用",
+  detail:["背景：筹开项目节点多、跨部门，靠表格跟踪容易漏项与延期。",
+          "做法：搭建节点跟踪工具，按里程碑—地产一级—区域二级—项目三级四层管控，每个节点记录审批 URL。",
+          "结果：节点状态（已完成 / 进行中 / 临期 / 已逾期）一目了然，为后续接外部审批流预留接口。"]}
+];
+
+/* ================= 渲染 ================= */
+var expList=document.getElementById('expList');
+EXP.forEach(function(e,i){
+  var b=document.createElement('button');
+  b.className='ecard';b.dataset.k='exp';b.dataset.i=i;
+  b.innerHTML='<span class="yr">'+e.yr+'</span>'+
+    '<span class="co">'+e.co+'</span>'+
+    '<span class="rl">'+e.role+'</span>'+
+    '<span class="pt">'+e.brief+'</span>'+
+    '<span class="go">展开详情 <em>→</em></span>';
+  expList.appendChild(b);
+});
+
+var capList=document.getElementById('capList');
+CAP.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.className='pf-cap';b.dataset.k='cap';b.dataset.i=i;
+  b.innerHTML='<span>'+c.t+'</span><em>→</em>';
+  capList.appendChild(b);
+});
+
+var vibeList=document.getElementById('vibeList');
+VIBE.forEach(function(v,i){
+  var b=document.createElement('button');
+  b.className='vcard';b.dataset.k='vibe';b.dataset.i=i;
+  b.innerHTML='<div class="vt">'+v.tag+'</div><h3>'+v.t+'</h3><p>'+v.d+'</p>';
+  vibeList.appendChild(b);
+});
+var add=document.createElement('button');
+add.className='vcard add';add.dataset.k='vibeadd';
+add.innerHTML='<span class="plus">＋</span><span>继续添加案例</span>';
+vibeList.appendChild(add);
+
+/* ================= 弹层 ================= */
+var modal=document.getElementById('modal'),mask=document.getElementById('mask'),
+    moBody=document.getElementById('moBody'),moTitle=document.getElementById('moTitle'),
+    moKicker=document.getElementById('moKicker'),moClose=document.getElementById('moClose');
+var lastFocus=null;
+function el(tag,cls,html){var n=document.createElement(tag);if(cls)n.className=cls;if(html!=null)n.innerHTML=html;return n;}
+
+function blockExp(e){
+  var b=el('div','blk');
+  b.innerHTML='<div class="yr">'+e.yr+'</div><h4>'+e.co+'</h4><div class="role">'+e.role+'</div>'+
+    '<div class="meta">'+e.meta.map(function(m){return '<i>'+m+'</i>';}).join('')+'</div>'+
+    '<div class="blk-h">职责与成果</div><ul>'+e.pts.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+
+    (e.proj?'<div class="note"><div class="blk-h" style="margin-bottom:6px;">重点在管项目</div><p>'+e.proj+'</p></div>':'');
+  return b;
+}
+function blockCap(c){
+  var b=el('div','blk');
+  b.innerHTML='<h4>'+c.t+'</h4><div class="role">'+c.d+'</div>'+
+    '<div class="blk-h" style="margin-top:16px;">能力要点</div>'+
+    c.pts.map(function(p){return '<div class="ckli"><i>✓</i><span>'+p+'</span></div>';}).join('')+
+    '<div class="note"><p>'+c.rel+'</p></div>';
+  return b;
+}
+function blockVibe(v){
+  var b=el('div','blk');
+  b.innerHTML='<div class="yr">'+v.tag+'</div><h4>'+v.t+'</h4><div class="role">'+v.d+'</div>'+
+    '<div class="blk-h" style="margin-top:16px;">背景 · 做法 · 结果</div><ul>'+
+    v.detail.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+
+    '<div class="note"><p>状态：'+v.status+'。案例细节持续补充中（截图 / 数据 / 链接待接入）。</p></div>';
+  return b;
+}
+function blockAbout(){
+  var b=el('div','blk');
+  b.innerHTML='<div class="blk-h">个人陈述</div><ul>'+
+   '<li>在<b>华润置地、中粮大悦城、万达集团、万科、象屿地产</b>五家头部企业完成资管全链路训练：从招商运营管培生，到投资选址与回报测算，到 100 亿轻资产包投后，再到统筹 12 城 80 余个自持商办项目。</li>'+
+   '<li>工作方法是<b>先搭框架，再落细节</b>：牵头公司级资管运营体系与「投—融—管—退」制度标准，主导筹开节点强排与年度经营预算。</li>'+
+   '<li>同时是<b>把 AI 用进业务里的人</b>：自主搭建经营数据可视化驾驶舱，打通业务、财务与会员多源数据，实现自动抽取与智能诊断。</li></ul>'+
+   '<div class="blk-h" style="margin-top:22px;">个人特质</div>'+
+   '<div class="ckli"><i>✓</i><span><b>ENTJ 指挥官型</b>：框架化梳理问题，细化行动步骤，多维度验证可行性</span></div>'+
+   '<div class="ckli"><i>✓</i><span><b>沟通表达</b>：形象气质良好，普通话标准，长期担任各类活动主持人</span></div>'+
+   '<div class="ckli"><i>✓</i><span><b>需求撮合</b>：善于探究各方需求，跨行业跨部门协作，以信息采集与规范制定实现撮合</span></div>'+
+   '<div class="blk-h" style="margin-top:22px;">教育背景</div>'+
+   '<div class="mo-edu"><div><b>南京工业大学</b><span>管理科学 · 硕士</span></div><i>2009 — 2012</i></div>'+
+   '<div class="mo-edu"><div><b>南京工业大学</b><span>测绘工程 · 学士</span></div><i>2005 — 2009</i></div>'+
+   '<div class="mo-edu"><div><b>重庆南开中学</b><span>高中</span></div><i>2002 — 2005</i></div>'+
+   '<div class="chips" style="margin-top:14px;"><i class="g">腾讯 WorkBuddy 首批 NOVA 大使</i><i class="g">效率智能体 OPC 从业认证</i><i>MBTI · ENTJ</i><i>南开华东校友会秘书团成员</i><i>中共党员</i></div>';
+  return b;
+}
+
+function openModal(kicker,title,node){
+  moKicker.textContent=kicker;moTitle.textContent=title;
+  moBody.innerHTML='';moBody.appendChild(node);
+  modal.classList.add('on');mask.classList.add('on');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  moBody.scrollTop=0;moClose.focus();
+}
+function closeModal(){
+  modal.classList.remove('on');mask.classList.remove('on');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  if(lastFocus)lastFocus.focus();
+}
+function openItem(k,i){
+  var wrap=el('div');
+  if(k==='exp'){
+    wrap.appendChild(blockExp(EXP[i]));
+    var nav=el('div','mo-nav');
+    var pv=el('button','','← 上一段：'+(EXP[i-1]?EXP[i-1].co:'')),nx=el('button','','下一段：'+(EXP[i+1]?EXP[i+1].co:'')+' →');
+    if(i===0){pv.disabled=true;pv.textContent='← 已是第一段';}
+    if(i===EXP.length-1){nx.disabled=true;nx.textContent='已是最后一段 →';}
+    pv.onclick=function(){openItem('exp',i-1);};
+    nx.onclick=function(){openItem('exp',i+1);};
+    nav.appendChild(pv);nav.appendChild(nx);wrap.appendChild(nav);
+    openModal('EXPERIENCE · 0'+(i+1),EXP[i].co,wrap);
+  }else if(k==='cap'){
+    wrap.appendChild(blockCap(CAP[i]));
+    openModal('CAPABILITY · 0'+(i+1),CAP[i].t,wrap);
+  }else if(k==='vibe'){
+    wrap.appendChild(blockVibe(VIBE[i]));
+    openModal('VIBE CODING · 0'+(i+1),VIBE[i].t,wrap);
+  }else if(k==='vibeadd'){
+    var b=el('div','blk');
+    b.innerHTML='<div class="blk-h">如何添加新案例</div><ul>'+
+      '<li>准备三项内容：案例名称、一句话说明（解决什么问题）、背景 / 做法 / 结果三段文字，配一张截图更佳。</li>'+
+      '<li>把内容发给我（或直接在对话里描述），我会在 Vibe Coding 模块里新增一张卡片，并接入展开详情。</li>'+
+      '<li>推荐结构：<b>背景痛点 → AI 实现过程 → 业务结果</b>，能量化的尽量量化（节省工时、覆盖率、使用率）。</li></ul>'+
+      '<div class="note"><p>占位卡片已预留，随时可替换成你的真实案例。</p></div>';
+    wrap.appendChild(b);
+    openModal('VIBE CODING','添加案例',wrap);
+  }
+}
+function openAll(k){
+  var wrap=el('div');
+  var sep=function(b,i){if(i>0){b.style.marginTop='26px';b.style.paddingTop='22px';b.style.borderTop='1px solid #E1E9E3';}};
+  if(k==='exp'){
+    EXP.forEach(function(e,i){var b=blockExp(e);sep(b,i);wrap.appendChild(b);});
+    openModal('EXPERIENCE · ALL','职业经历（全部 6 段）',wrap);
+  }else if(k==='cap'){
+    CAP.forEach(function(c,i){var b=blockCap(c);sep(b,i);wrap.appendChild(b);});
+    openModal('CAPABILITY · ALL','核心能力（全部 4 项）',wrap);
+  }else if(k==='vibe'){
+    VIBE.forEach(function(v,i){var b=blockVibe(v);sep(b,i);wrap.appendChild(b);});
+    openModal('VIBE CODING · ALL','案例库（全部 '+VIBE.length+' 个）',wrap);
+  }
+}
+document.addEventListener('click',function(ev){
+  var it=ev.target.closest?ev.target.closest('[data-k]'):null;
+  if(it){lastFocus=it;openItem(it.dataset.k,parseInt(it.dataset.i,10));return;}
+  var al=ev.target.closest?ev.target.closest('[data-all]'):null;
+  if(al){lastFocus=al;openAll(al.dataset.all);}
+});
+mask.addEventListener('click',closeModal);
+moClose.addEventListener('click',closeModal);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('on'))closeModal();});
+
+/* 主标题为绝对定位层，右侧内容按标题实测高度让位 */
+var hl=document.querySelector('.headline'),ct=document.querySelector('.content');
+function syncPad(){
+  if(!hl||!ct)return;
+  if(window.innerWidth>1080){ct.style.paddingTop=(hl.offsetHeight+22)+'px';}
+  else{ct.style.paddingTop='';}
+}
+window.addEventListener('resize',syncPad);
+window.addEventListener('load',syncPad);
+syncPad();
+
+/* ================= 入场与数字动效 ================= */
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce){
+  var seq=[document.querySelector('.photo'),document.querySelector('.headline'),document.querySelector('.content')];
+  seq.forEach(function(n,i){if(n){n.classList.add('anim');n.style.animationDelay=(i*110)+'ms';}});
+}
+function countUp(){
+  [].slice.call(document.querySelectorAll('.cu')).forEach(function(n){
+    var to=parseInt(n.dataset.to,10);
+    if(reduce||!to){n.textContent=to;return;}
+    var dur=1100,t0=null;n.textContent='0';
+    function step(t){
+      if(t0===null)t0=t;
+      var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);
+      n.textContent=Math.round(to*e);
+      if(k<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+setTimeout(countUp,420);
+
+/* ================= 打印 ================= */
+function buildPrint(){
+  var h='<h1>彭蔚锋 EDDIE PENG</h1><div class="p-sub">资深资产管理 × AI 资管信息化 · 象屿地产资产管理部负责人 · 邮箱 issic_520@163.com · 电话 133 7001 1105</div>';
+  h+='<h2>职业经历</h2>';
+  EXP.forEach(function(e){
+    h+='<h3>'+e.co+'　<span class="p-yr">'+e.yr+'</span></h3><div class="p-role">'+e.role+' ｜ '+e.meta.join(' ｜ ')+'</div><ul>';
+    e.pts.forEach(function(p){h+='<li>'+p+'</li>';});
+    h+='</ul>';
+    if(e.proj)h+='<div class="p-item"><b>重点项目：</b>'+e.proj+'</div>';
+  });
+  h+='<h2>核心能力</h2>';
+  CAP.forEach(function(c){h+='<h3>'+c.t+'</h3><ul>';c.pts.forEach(function(p){h+='<li>'+p+'</li>';});h+='</ul>';});
+  h+='<h2>Vibe Coding 案例库</h2>';
+  VIBE.forEach(function(v){h+='<h3>'+v.t+'　<span class="p-yr">'+v.tag+'</span></h3><ul>';v.detail.forEach(function(p){h+='<li>'+p+'</li>';});h+='</ul>';});
+  h+='<h2>教育背景</h2><div class="p-item">南京工业大学 管理科学硕士（2009–2012）｜南京工业大学 测绘工程学士（2005–2009）｜重庆南开中学（2002–2005）</div>';
+  h+='<h2>认证与特质</h2><div class="p-item">腾讯 WorkBuddy 首批 NOVA 大使 ｜ 效率智能体 OPC 从业认证 ｜ MBTI ENTJ ｜ 南开华东校友会秘书团成员 ｜ 中共党员</div>';
+  h+='<div class="p-foot">本页人物照为 AI 生成示意，非本人实拍 · DEVELOPED BY EDDIE · V6.0</div>';
+  document.getElementById('printAll').innerHTML=h;
+}
+window.addEventListener('beforeprint',buildPrint);
+buildPrint();
+})();
+</script>
+</body>
+</html>

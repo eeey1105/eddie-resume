@@ -75,7 +75,6 @@ button{font-family:inherit;}
 .contact{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;}
 .contact a{color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;transition:color .2s,border-color .2s;}
 .contact a:hover{color:var(--lime);border-color:var(--lime);}
-.contact a.pdf{color:var(--lime);border-color:rgba(199,238,107,.4);}
 
 /* 主标题：z 序低于人物层，文字从人物身后穿过、被人物身体遮住，形成前后立体关系 */
 .headline{position:absolute;top:0;left:26%;right:0;z-index:1;padding:44px 34px 0 0;pointer-events:none;}
@@ -244,8 +243,6 @@ button{font-family:inherit;}
       <div class="caps" id="capList"></div>
       <div class="contact">
         <a href="mailto:issic_520@163.com">issic_520@163.com</a>
-        <a href="tel:13370011105">133 7001 1105</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" class="pdf">下载完整简历 PDF</a>
       </div>
     </div>
   </div>
@@ -569,7 +566,7 @@ setTimeout(countUp,420);
 
 /* ================= 打印 ================= */
 function buildPrint(){
-  var h='<h1>彭蔚锋 EDDIE PENG</h1><div class="p-sub">资深资产管理 × AI 资管信息化 · 象屿地产资产管理部负责人 · 邮箱 issic_520@163.com · 电话 133 7001 1105</div>';
+  var h='<h1>彭蔚锋 EDDIE PENG</h1><div class="p-sub">资深资产管理 × AI 资管信息化 · 象屿地产资产管理部负责人 · 邮箱 issic_520@163.com</div>';
   h+='<h2>职业经历</h2>';
   EXP.forEach(function(e){
     h+='<h3>'+e.co+'　<span class="p-yr">'+e.yr+'</span></h3><div class="p-role">'+e.role+' ｜ '+e.meta.join(' ｜ ')+'</div><ul>';

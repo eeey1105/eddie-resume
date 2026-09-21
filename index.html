@@ -35,13 +35,13 @@ html,body{overflow-x:hidden;}
 /* 宽屏（>1560px）时向视口左缘延伸填满，不留白条 */
 .ambient{position:absolute;left:calc(50% - 50vw);top:0;width:calc(44% + 50vw - 50%);height:100%;z-index:0;pointer-events:none;
   background:url("assets/office-window.jpg") center 32%/cover no-repeat;
-  -webkit-mask-image:linear-gradient(90deg,#000 56%,rgba(0,0,0,.55) 80%,transparent 99%);
-  mask-image:linear-gradient(90deg,#000 56%,rgba(0,0,0,.55) 80%,transparent 99%);}
+  -webkit-mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.55) 82%,transparent 99%);
+  mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.55) 82%,transparent 99%);}
 /* 绿色渐变：顶部轻压、底部沉入墨绿（承载图上白字），右缘随图一起渐隐到浅底 */
 .veil{position:absolute;left:calc(50% - 50vw);top:0;width:calc(44% + 50vw - 50%);height:100%;z-index:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(12,53,42,.16) 0,rgba(12,53,42,.05) 20%,rgba(12,53,42,.12) 46%,rgba(12,53,42,.58) 74%,rgba(12,53,42,.92) 92%,var(--forest) 100%);
-  -webkit-mask-image:linear-gradient(90deg,#000 56%,rgba(0,0,0,.55) 80%,transparent 99%);
-  mask-image:linear-gradient(90deg,#000 56%,rgba(0,0,0,.55) 80%,transparent 99%);}
+  -webkit-mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.55) 82%,transparent 99%);
+  mask-image:linear-gradient(90deg,#000 62%,rgba(0,0,0,.55) 82%,transparent 99%);}
 
 /* 人物：透明抠图层，压在标题之上形成立体遮挡；边缘柔和投影融入底板 */
 .photo{position:relative;z-index:2;pointer-events:none;overflow:hidden;}

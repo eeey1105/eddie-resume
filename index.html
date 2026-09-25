@@ -64,8 +64,8 @@ html,body{overflow-x:hidden;}
 .contact a{color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;transition:color .2s,border-color .2s;}
 .contact a:hover{color:var(--lime);border-color:var(--lime);}
 
-/* 主标题：z 序低于人物层，文字从人物身后穿过、被人物身体遮住，形成前后立体关系 */
-.headline{position:absolute;top:0;left:26%;right:0;z-index:1;padding:44px 34px 0 0;pointer-events:none;}
+/* 主标题：整体置于右栏上方，左缘与下方内容卡片对齐 */
+.headline{position:absolute;top:0;left:calc(44% + 30px);right:0;z-index:1;padding:44px 34px 0 0;pointer-events:none;}
 .headline h1{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.15vw,32px);line-height:1.46;letter-spacing:.025em;color:#0C352A;text-shadow:0 1px 14px rgba(247,250,248,.55);}
 .headline h1 em{font-style:normal;color:#0A6B45;}
 .headline .sub{font-size:13.5px;color:rgba(12,53,42,.66);margin-top:12px;letter-spacing:.03em;line-height:1.7;max-width:640px;}
@@ -159,6 +159,7 @@ html,body{overflow-x:hidden;}
 @media (max-width:1240px){
   .stage{grid-template-columns:42% minmax(0,1fr);}
   .content{padding-top:210px;}
+  .headline{left:calc(42% + 30px);}
 }
 @media (max-width:1080px){
   .stage{grid-template-columns:1fr;grid-template-rows:none;height:auto;min-height:0;padding-bottom:26px;}
